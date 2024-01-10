@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
+import Navbar from '@/app/components/navbar'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +14,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ja">
+      <body >
+        {/* この書き方でNavbarを起動できる */}
+         <Navbar />
+        <main className='fiex min-h-screen fiex-col p-5'>
+        {children}
+        </main>
+      </body>
     </html>
   )
 }
